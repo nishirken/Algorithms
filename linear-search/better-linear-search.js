@@ -7,7 +7,7 @@ const betterLinearSearch = (array, searchValue) => {
   const lastValue = array[lastIndex];
   const result = {
     algoName: 'Better linear search',
-    arrayLength: array.length,
+    initial: array.length,
   };
   let i = 0;
 
@@ -22,7 +22,7 @@ const betterLinearSearch = (array, searchValue) => {
       spentTime: utils.calculateTime(time),
       message: utils.showResult(i, time),
       foundedIndex: i,
-      foundedValue: searchValue,
+      value: searchValue,
     });
   }
 
@@ -30,7 +30,7 @@ const betterLinearSearch = (array, searchValue) => {
     spentTime: utils.calculateTime(time),
     message: utils.showResult(null, time),
     foundedIndex: null,
-    foundedValue: null,
+    value: null,
   });
 };
 

@@ -4,6 +4,6 @@ module.exports = (value, time) => {
   const calculatedTime = calculateTime(time);
 
   return typeof value === 'number' ?
-    `Founded index of value: ${value}, ${calculatedTime}` :
+    `The result is: ${value}, ${calculatedTime}` :
     `Not found, ${calculatedTime}`;
 };

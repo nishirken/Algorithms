@@ -1,7 +1,7 @@
 const utils = require('../utils');
 
 module.exports = async searchFunc => {
-  const params = await utils.getParams();
+  const params = await utils.getParams('array', 'value');
   const newArray = utils.createArray(params.count);
   const searchResult = searchFunc(newArray, params.searchValue);
 

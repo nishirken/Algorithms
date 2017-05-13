@@ -1,15 +1,26 @@
 const prompt = require('prompt-promise');
 
-module.exports = async () => {
+const getArray = async () => {
+  const count = await prompt('Array count?\n');
+
+  return count;
+};
+const getValue = async () => {
+  const value = await prompt('Value?\n');
+
+  return value;
+};
+
+module.exports = async (firstParam, secondParam) => {
   try {
-    const count = await prompt('Array count?\n');
-    const searchValue = await prompt('Search value?\n');
+    const value = secondParam === 'value' ? await getValue() : null;
+    const count = firstParam === 'array' ? await getArray() : null;
 
     prompt.done();
 
     return {
       count: Number(count),
-      searchValue: Number(searchValue),
+      value: Number(value),
     };
   } catch (error) {
     console.error(error);

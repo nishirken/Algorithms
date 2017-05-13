@@ -5,7 +5,7 @@ const linearSearch = (array, searchValue) => {
   const time = process.hrtime();
   const result = {
     algoName: 'Linear search',
-    arrayLength: array.length,
+    initial: array.length,
   };
 
   for (let i = 0; i < array.length; i++) {
