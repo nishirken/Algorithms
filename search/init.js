@@ -5,6 +5,6 @@ module.exports = async searchFunc => {
   const newArray = utils.createArray(params.count);
   const searchResult = searchFunc(newArray, params.value);
 
-  utils.writeLogs('linear-search/success.log', 'linear-search/failure.log', searchResult);
+  utils.writeLogs('search/success.log', 'search/failure.log', searchResult);
   console.log(searchResult.message);
 };
