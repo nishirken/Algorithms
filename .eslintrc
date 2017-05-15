@@ -36,23 +36,24 @@
     "no-unexpected-multiline": "warn",
     "no-unsafe-negation": "error",
     "valid-jsdoc": [
-      "warn",
+      "error",
       {
         "prefer": {
           "arg": "param",
           "argument": "param",
           "class": "constructor",
-          "return": "returns",
+          "return": "return",
           "virtual": "abstract"
         },
         "preferType": {
           "Boolean": "boolean",
           "Number": "number",
-          "object": "Object",
+          "object": "object",
           "String": "string"
         },
         "requireReturnType": false,
-        "requireParamDescription": false
+        "requireParamDescription": false,
+        "requireReturnDescription": false
       }
     ],
     "array-callback-return": "error",

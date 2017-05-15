@@ -1,6 +1,12 @@
 const init = require('./init');
 const utils = require('../utils');
 
+/**
+ * Function for binary search algo
+ * @param {array} array - which should be treated
+ * @param {number} searchValue - which should be searched
+ * @return {object}
+ */
 const binarySearch = (array, searchValue) => {
   const time = process.hrtime();
   const sortedArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];

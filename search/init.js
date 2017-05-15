@@ -1,5 +1,10 @@
 const utils = require('../utils');
 
+/**
+ * The wrapper on search function
+ * @param {function} searchFunc
+ * @return {Promise.<void>}
+ */
 module.exports = async searchFunc => {
   const params = await utils.getParams('array', 'value');
   const newArray = utils.createArray(params.count);

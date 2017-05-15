@@ -1,5 +1,10 @@
 const utils = require('../utils');
 
+/**
+ * Recursive factorial function
+ * @param {number} value - current factorial step
+ * @return {number} next factorial step
+ */
 const getFactorial = value => {
   if (value === 0) {
     return 1;
@@ -8,6 +13,11 @@ const getFactorial = value => {
   return value * getFactorial(value - 1);
 };
 
+/**
+ * Calculating run time of getFactorial function
+ * @param {number} value - for search
+ * @return {object}
+ */
 const calculateTime = value => {
   const time = process.hrtime();
   const factorial = getFactorial(value);
@@ -21,6 +31,11 @@ const calculateTime = value => {
     value: factorial,
   };
 };
+
+/**
+ * Factorial function wrapper
+ * @return {Promise.<void>}
+ */
 const init = async () => {
   try {
     const params = await utils.getParams(null, 'value');

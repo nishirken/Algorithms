@@ -1,6 +1,13 @@
 const init = require('./init');
 const utils = require('../utils');
 
+/**
+ * Function for recursive linear search algo
+ * @param {array} array - which should be treated
+ * @param {number} searchValue - which should be searched
+ * @param {number} index - current index
+ * @return {*}
+ */
 const getSearchResult = (array, searchValue, index = 0) => {
   if (index > array.length) {
     return null;
@@ -10,6 +17,13 @@ const getSearchResult = (array, searchValue, index = 0) => {
 
   return getSearchResult(array, searchValue, index + 1);
 };
+
+/**
+ * Recursive linear search wrapper
+ * @param {array} array - which should be treated
+ * @param {number} searchValue - which should be searched
+ * @return {*}
+ */
 const recursiveLinearSearch = (array, searchValue) => {
   const time = process.hrtime();
   const result = {

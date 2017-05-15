@@ -1,23 +1,29 @@
 const init = require('./init');
 const utils = require('../utils');
 
+/**
+ * Function for better linear search algo
+ * @param {array} array - which should be treated
+ * @param {number} searchValue - which should be searched
+ * @return {object}
+ */
 const betterLinearSearch = (array, searchValue) => {
+  const innerArray = Array.from(array);
   const time = process.hrtime();
-  const lastIndex = array.length - 1;
-  const lastValue = array[lastIndex];
+  const lastIndex = innerArray.length - 1;
+  const lastValue = innerArray[lastIndex];
   const result = {
     algoName: 'Better linear search',
-    initial: array.length,
+    initial: innerArray.length,
   };
   let i = 0;
 
-  array[lastIndex] = searchValue;
-  while (array[i] !== searchValue) {
+  innerArray[lastIndex] = searchValue;
+  while (innerArray[i] !== searchValue) {
     i++;
   }
-  array[lastIndex] = lastValue;
-
-  if (i < lastIndex || (array[lastIndex] = searchValue)) {
+  innerArray[lastIndex] = lastValue;
+  if (i < lastIndex || innerArray[lastIndex] === searchValue) {
     return Object.assign({}, result, {
       spentTime: utils.calculateTime(time),
       message: utils.showResult(i, time),
@@ -35,3 +41,5 @@ const betterLinearSearch = (array, searchValue) => {
 };
 
 init(betterLinearSearch);
+
+module.exports = betterLinearSearch;
