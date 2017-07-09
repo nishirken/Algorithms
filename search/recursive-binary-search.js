@@ -2,36 +2,42 @@ const init = require('./init');
 const utils = require('../utils');
 
 /**
- * Function for recursive linear search algo
+ * Function for recursive binary search algo
  * @param {array} array - which should be treated
  * @param {number} searchValue - which should be searched
- * @param {number} index - current index
+ * @param {number} start - start index
+ * @param {number} end - end index
  * @return {*}
  */
-const getSearchResult = (array, searchValue, index = 0) => {
-  if (index > array.length) {
+const getSearchResult = (array, searchValue, start, end) => {
+  if (start > end) {
     return null;
-  } else if (array[index] === searchValue) {
-    return index;
+  }
+  const mid = Math.round((start + end) / 2);
+
+  if (array[mid] === searchValue) {
+    return mid;
+  } else if (array[mid] > searchValue) {
+    return getSearchResult(array, searchValue, start, array[mid] - 1);
   }
 
-  return getSearchResult(array, searchValue, index + 1);
+  return getSearchResult(array, searchValue, array[mid] + 1, end);
 };
 
 /**
- * Recursive linear search wrapper
+ * Recursive binary search wrapper
  * @param {array} array - which should be treated
  * @param {number} searchValue - which should be searched
  * @return {*}
  */
-const recursiveLinearSearch = (array, searchValue) => {
+const recursiveBinarySearch = (array, searchValue) => {
   const newArray = Array.from(array);
   const time = process.hrtime();
   const result = {
-    algoName: 'Recursive Linear search',
+    algoName: 'Recursive Binary search',
     initial: array.length,
   };
-  const searchRes = getSearchResult(newArray, searchValue, 0);
+  const searchRes = getSearchResult(newArray, searchValue, 0, newArray.length - 1);
 
   if (searchRes) {
     return Object.assign({}, result, {
@@ -50,4 +56,6 @@ const recursiveLinearSearch = (array, searchValue) => {
   });
 };
 
-init(recursiveLinearSearch);
+init(recursiveBinarySearch);
+
+module.exports = recursiveBinarySearch;
