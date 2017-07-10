@@ -32,6 +32,6 @@ const selectionSort = array => {
   };
 };
 
-selectionSort([0, 3, 1, 4, 2]);
+init(selectionSort);
 
 module.exports = selectionSort;

@@ -1,4 +1,4 @@
-const recursiveBinarySearch = require('../../search/recursive-binary-search');
+const getSearchResult = require('../../search/recursive-binary-search');
 
 jest.mock('../../search/init');
 jest.mock('../../utils');
@@ -9,26 +9,14 @@ describe('Recursive binary search', () => {
   const failValue = 10;
 
   it('Should return index with searched value', () => {
-    const result = recursiveBinarySearch(array, value);
+    const result = getSearchResult(array, value, 0, array.length - 1);
 
-    expect(result.foundedIndex).toBe(value);
-  });
-
-  it('Should return value with searched value', () => {
-    const result = recursiveBinarySearch(array, value);
-
-    expect(result.foundedValue).toBe(value);
+    expect(result).toBe(2);
   });
 
   it('Should return index, when the value doesn\'t founded', () => {
-    const result = recursiveBinarySearch(array, failValue);
+    const result = getSearchResult(array, failValue, 0, array.length - 1);
 
-    expect(result.foundedIndex).toBe(null);
-  });
-
-  it('Should return value, when the value doesn\'t founded', () => {
-    const result = recursiveBinarySearch(array, failValue);
-
-    expect(result.foundedValue).toBe(null);
+    expect(result).toBe(null);
   });
 });

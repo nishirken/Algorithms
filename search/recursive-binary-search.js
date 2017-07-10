@@ -3,7 +3,7 @@ const utils = require('../utils');
 
 /**
  * Function for recursive binary search algo
- * @param {array} array - which should be treated
+ * @param {Array<number>} array - which should be treated
  * @param {number} searchValue - which should be searched
  * @param {number} start - start index
  * @param {number} end - end index
@@ -26,7 +26,7 @@ const getSearchResult = (array, searchValue, start, end) => {
 
 /**
  * Recursive binary search wrapper
- * @param {array} array - which should be treated
+ * @param {Array<number>} array - which should be treated
  * @param {number} searchValue - which should be searched
  * @return {*}
  */
@@ -58,4 +58,4 @@ const recursiveBinarySearch = (array, searchValue) => {
 
 init(recursiveBinarySearch);
 
-module.exports = recursiveBinarySearch;
+module.exports = getSearchResult;

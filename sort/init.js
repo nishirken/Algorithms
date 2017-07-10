@@ -10,6 +10,7 @@ module.exports = async sortFunc => {
   const newArray = utils.createArray(params.count);
   const sortResult = sortFunc(newArray, params.value);
 
-  utils.writeLogs('search/success.log', 'search/failure.log', sortResult);
+  sortResult.value = [];
+  utils.writeLogs('sort/success.log', 'sort/failure.log', sortResult);
   console.log(sortResult.message);
 };
