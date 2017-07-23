@@ -8,7 +8,7 @@ const utils = require('../utils');
 module.exports = async sortFunc => {
   const params = await utils.getParams('array');
   const newArray = utils.createArray(params.count);
-  const sortResult = sortFunc(newArray, params.value);
+  const sortResult = sortFunc(newArray);
 
   sortResult.value = [];
   utils.writeLogs('sort/success.log', 'sort/failure.log', sortResult);
