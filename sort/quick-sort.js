@@ -56,7 +56,7 @@ const quickSortWrapper = array => {
   quickSort(newArray, 0, newArray.length - 1);
 
   return {
-    algoName: 'Merge sort',
+    algoName: 'Quick sort',
     initial: newArray.length,
     spentTime: utils.calculateTime(time),
     message: utils.showResult('sort', time),
