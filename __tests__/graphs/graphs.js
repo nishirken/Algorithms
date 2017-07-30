@@ -25,11 +25,14 @@ describe('Graphs', () => {
       expect(createNext(expectedInDegree())).toEqual(expectedNext());
     });
 
-    // TODO: figure out how to test topological sort
+    /**
+     * There are more than one correct result of topological sort,
+     * In this case we go from left to right in a graph traversal
+     */
     test('createLinearOrdering function', () => {
-      const expectedOrder = [0, 2, 1, 3, 5, 6, 4, 7, 8, 9];
+      const expectedOrder = [0, 1, 2, 3, 5, 6, 7, 4, 8, 9];
 
-//      expect(createLinearOrdering(graph, expectedNext(), expectedInDegree())).toEqual(expectedOrder);
+      expect(createLinearOrdering(graph, expectedNext(), expectedInDegree())).toEqual(expectedOrder);
     });
   });
 });
