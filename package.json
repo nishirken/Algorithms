@@ -9,7 +9,7 @@
     "node": "7.10.0"
   },
   "scripts": {
-    "test": "jest --watch --config=jest.config.json --notify"
+    "test": "jest --watch --config=jest.config.json"
   },
   "dependencies": {
     "babel-eslint": "^7.2.3",

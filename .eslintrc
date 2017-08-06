@@ -60,7 +60,7 @@
     "block-scoped-var": "error",
     "class-methods-use-this": "off",
     "complexity": [
-      "error",
+      "off",
       4
     ],
     "consistent-return": "warn",
@@ -152,7 +152,7 @@
       }
     ],
     "no-undef": "error",
-    "no-undefined": "error",
+    "no-undefined": "off",
     "no-use-before-define": "error",
     "array-bracket-spacing": [
       "error",
@@ -283,7 +283,7 @@
       "error",
       3
     ],
-    "max-params": ["error", 4],
+    "max-params": ["off", 4],
     "max-statements-per-line": "error",
     "max-statements": [
       "off",
