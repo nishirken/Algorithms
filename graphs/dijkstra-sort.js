@@ -39,7 +39,7 @@ const searchMinShortest = (shortest, Q) => {
  * @param {Array<Object<number, number>>} graph
  * @returns {void}
  */
-const DijkstraSearch = (shortest, prev, graph) => {
+const dijkstraSearch = (shortest, prev, graph) => {
   const Q = [];
   let i = 0;
 
@@ -64,5 +64,5 @@ const DijkstraSearch = (shortest, prev, graph) => {
 module.exports = {
   relax,
   searchMinShortest,
-  DijkstraSearch,
+  dijkstraSearch,
 };

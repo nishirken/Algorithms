@@ -1,6 +1,6 @@
 const { createInDegree, createNext, createLinearOrdering } =
   require('../../graphs/topological-sort');
-const { relax, searchMinShortest, dukstraSearch } = require('../../graphs/dukstra-sort');
+const { relax, searchMinShortest, dijkstraSearch } = require('../../graphs/dijkstra-sort');
 
 describe('Graphs', () => {
   describe('Topological sort', () => {
@@ -83,7 +83,7 @@ describe('Graphs', () => {
       const expectedShortest = [0, 1, 1, 4, 3];
       const expectedPrev = [null, 0, 0, 1, 1];
 
-      dukstraSearch(initialShortest, initialPrev, graph);
+      dijkstraSearch(initialShortest, initialPrev, graph);
       expect(initialShortest).toEqual(expectedShortest);
       expect(initialPrev).toEqual(expectedPrev);
     });
