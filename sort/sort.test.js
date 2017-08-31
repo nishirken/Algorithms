@@ -1,11 +1,11 @@
-const selectionSort = require('../../sort/selection-sort');
-const insertionSort = require('../../sort/insertion-sort');
-const { mergeSort, merge } = require('../../sort/merge-sort');
-const { quickSort, partition, swap } = require('../../sort/quick-sort');
-const { countKeysEqual, sort } = require('../../sort/count-sort');
+const selectionSort = require('./selection-sort');
+const insertionSort = require('./insertion-sort');
+const { mergeSort, merge } = require('./merge-sort');
+const { quickSort, partition, swap } = require('./quick-sort');
+const { countKeysEqual, sort } = require('./count-sort');
 
-jest.mock('../../sort/init');
-jest.mock('../../utils');
+jest.mock('./init');
+jest.mock('../utils');
 
 describe('Sort algorithms', () => {
   test('Selection sort', () => {

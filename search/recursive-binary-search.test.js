@@ -1,7 +1,7 @@
-const getSearchResult = require('../../search/recursive-binary-search');
+const getSearchResult = require('./recursive-binary-search');
 
-jest.mock('../../search/init');
-jest.mock('../../utils');
+jest.mock('./init');
+jest.mock('../utils');
 
 describe('Recursive binary search', () => {
   const array = [0, 1, 2, 3, 4, 5];

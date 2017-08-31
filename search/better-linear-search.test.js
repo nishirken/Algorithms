@@ -1,7 +1,7 @@
-const betterLinearSearch = require('../../search/better-linear-search');
+const betterLinearSearch = require('./better-linear-search');
 
-jest.mock('../../search/init');
-jest.mock('../../utils');
+jest.mock('./init');
+jest.mock('../utils');
 
 describe('Better linear search', () => {
   const array = [0, 1, 2, 3, 4, 5];
