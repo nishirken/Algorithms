@@ -18,7 +18,8 @@
     "it": true,
     "test": true,
     "expect": true,
-    "_": true
+    "_": true,
+    "Map": true
   },
   "rules": {
     "no-await-in-loop": "error",
@@ -251,7 +252,7 @@
         "afterBlockComment": false,
         "beforeLineComment": true,
         "afterLineComment": false,
-        "allowBlockStart": false,
+        "allowBlockStart": true,
         "allowBlockEnd": false,
         "allowObjectStart": false,
         "allowObjectEnd": false,
